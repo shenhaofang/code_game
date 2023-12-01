@@ -1,0 +1,7 @@
+app:
+  env: product
+  port: 10001
+log:
+  path: run.log
+  format: json
+  level: debug
