@@ -7,8 +7,9 @@ import (
 )
 
 type Config struct {
-	App AppCfg `json:"app" yaml:"app"`
-	Log LogCfg `json:"log" yaml:"log"`
+	App  AppCfg  `json:"app" yaml:"app"`
+	Log  LogCfg  `json:"log" yaml:"log"`
+	Game GameCfg `json:"game" yaml:"game"`
 }
 
 func (c *Config) Load(cfgFile string) error {
@@ -32,4 +33,8 @@ func App() AppCfg {
 
 func Log() LogCfg {
 	return stdConfig.Log
+}
+
+func Game() GameCfg {
+	return stdConfig.Game
 }

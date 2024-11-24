@@ -19,6 +19,10 @@ func (s *GameService) Init(osEnv svc.Environment) error {
 
 }
 
+func (s *GameService) LoadGame(name string) error {
+	return nil
+}
+
 // Start implements svc.Service.
 func (s *GameService) Start() error {
 	panic("unimplemented")

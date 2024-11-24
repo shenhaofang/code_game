@@ -7,9 +7,11 @@ type Player interface {
 }
 
 type Game interface {
-	AddPlayer(player Player) error
+	Name() string
 
 	Init() error
+
+	AddPlayer(player Player) error
 
 	ReadyToGo() bool
 
@@ -18,4 +20,10 @@ type Game interface {
 	Pause()
 
 	Over()
+}
+
+var games = make(map[string]Game, 1000)
+
+func Register(game Game) {
+	games[game.Name()] = game
 }
